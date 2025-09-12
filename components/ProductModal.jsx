@@ -1,4 +1,6 @@
 // components/ProductModal.jsx
+import Link from "next/link";
+
 export default function ProductModal({ product, onClose }) {
   if (!product) return null;
 
@@ -11,7 +13,6 @@ export default function ProductModal({ product, onClose }) {
         className="bg-white rounded-lg w-[90%] max-w-md p-6 relative animate-fadeIn shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
-
         {/* Botón cerrar */}
         <button
           onClick={onClose}
@@ -34,17 +35,14 @@ export default function ProductModal({ product, onClose }) {
           ${product.precio.toLocaleString("es-AR")}
         </p>
 
-        {/* Botón WhatsApp */}
-        <a
-          href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=Hola,%20me%20interesa%20el%20producto%20${encodeURIComponent(
-            product.nombre
-          )}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
+        {/* Botón -> lleva al detalle */}
+        <Link
+          href={`/producto/${product.slug}`}
+          className="inline-block mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition text-center w-full"
+          onClick={onClose} // 👈 también cerramos el modal al navegar
         >
-          Comprar por WhatsApp
-        </a>
+          Ver detalles
+        </Link>
       </div>
     </div>
   );

@@ -36,17 +36,7 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Botón WhatsApp directo */}
-            <a
-              href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=Hola,%20me%20interesa%20el%20producto%20${encodeURIComponent(
-                p.nombre
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block mt-4 bg-green-500 text-white px-4 py-2 rounded text-center hover:bg-green-600 transition"
-            >
-              Comprar por WhatsApp
-            </a>
+           
           </div>
         ))}
       </div>
