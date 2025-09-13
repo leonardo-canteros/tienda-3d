@@ -20,9 +20,21 @@
 }
 
 body {
-  background: var(--background);
+  background: url('/images/background.png') no-repeat center center fixed;
+  background-size: cover;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0; /* 👈 elimina espacios raros */
+  padding-top: 72px; /* 👈 igual a la altura de tu navbar */
+}
+
+.page-container {
+  background: rgba(20, 20, 20, 0.95); /* gris oscuro casi opaco */
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  margin: 20px auto;
+  max-width: 1400px;
+  overflow: hidden;
 }
 
 /*----------------------------------modal------------------------------------*/
