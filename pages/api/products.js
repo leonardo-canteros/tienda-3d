@@ -19,6 +19,7 @@ export default async function handler(req, res) {
         return res.status(200).json(products);
 
       // 📌 CREATE - Crear nuevo producto
+      
       case "POST":
           try {
             const body = req.body;
